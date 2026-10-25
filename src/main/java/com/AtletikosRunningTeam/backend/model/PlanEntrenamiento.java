@@ -42,7 +42,9 @@ public class PlanEntrenamiento {
     @OneToMany(mappedBy = "planEntrenamiento", fetch = FetchType.LAZY)
     private List<DetallePlanEjercicio> detallePlanEjercicios;
 
-    public PlanEntrenamiento(){}
+    public PlanEntrenamiento() {
+    }
+
     public PlanEntrenamiento(String nombrePlan, String descripcion, LocalDate fechaInicio, LocalDate fechaFin, Usuario entrenador, Usuario cliente, Estado estado) {
         this.nombrePlan = nombrePlan;
         this.descripcion = descripcion;
@@ -53,22 +55,75 @@ public class PlanEntrenamiento {
         this.estado = estado;
     }
 
-    public Integer getId() {return id;}
-    public void setId(Integer id) {this.id = id;}
-    public String getNombrePlan() {return nombrePlan;}
-    public void setNombrePlan(String nombrePlan) {this.nombrePlan = nombrePlan;}
-    public String getDescripcion() {return descripcion;}
-    public void setDescripcion(String descripcion) {this.descripcion = descripcion;}
-    public LocalDate getFechaInicio() {return fechaInicio;}
-    public void setFechaInicio(LocalDate fechaInicio) {this.fechaInicio = fechaInicio;}
-    public LocalDate getFechaFin() {return fechaFin;}
-    public void setFechaFin(LocalDate fechaFin) {this.fechaFin = fechaFin;}
-    public Usuario getEntrenador() {return entrenador;}
-    public void setIdEntrenador(Usuario entrenador) {this.entrenador = entrenador;}
-    public Usuario getCliente() {return cliente;}
-    public void setIdCliente(Usuario cliente) {this.cliente = cliente;}
-    public Estado getEstado() {return estado;}
-    public void setEstado(Estado estado) {this.estado = estado;}
-    public void setEntrenador(Usuario entrenador) {this.entrenador = entrenador;}
-    public void setCliente(Usuario cliente) {this.cliente = cliente;}
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNombrePlan() {
+        return nombrePlan;
+    }
+
+    public void setNombrePlan(String nombrePlan) {
+        this.nombrePlan = nombrePlan;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public LocalDate getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public void setFechaInicio(LocalDate fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public LocalDate getFechaFin() {
+        return fechaFin;
+    }
+
+    public void setFechaFin(LocalDate fechaFin) {
+        this.fechaFin = fechaFin;
+    }
+
+    public Usuario getEntrenador() {
+        return entrenador;
+    }
+
+    public void setEntrenador(Usuario entrenador) {
+        this.entrenador = entrenador;
+    }
+
+    public void setIdEntrenador(Usuario entrenador) {
+        this.entrenador = entrenador;
+    }
+
+    public Usuario getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Usuario cliente) {
+        this.cliente = cliente;
+    }
+
+    public void setIdCliente(Usuario cliente) {
+        this.cliente = cliente;
+    }
+
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
 }

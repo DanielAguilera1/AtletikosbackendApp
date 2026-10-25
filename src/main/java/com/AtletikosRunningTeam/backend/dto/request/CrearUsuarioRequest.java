@@ -1,18 +1,34 @@
 package com.AtletikosRunningTeam.backend.dto.request;
 
+import com.AtletikosRunningTeam.backend.model.Usuario;
+
+import java.time.LocalDate;
+
 public class CrearUsuarioRequest {
     private String nombre;
     private String apellido;
     private String email;
     private String contrasena;
-    private String telefono;
+    private LocalDate fechaNacimiento;
 
-    public CrearUsuarioRequest(String nombre, String apellido, String email, String contrasena, String telefono) {
+    public CrearUsuarioRequest(String nombre, String apellido, String email, String contrasena, LocalDate fechaNacimiento) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
         this.contrasena = contrasena;
-        this.telefono = telefono;
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public Usuario convertirUsuario(CrearUsuarioRequest usuarioRequest) {
+        Usuario usuario = new Usuario();
+        usuario.setNombre(usuarioRequest.getNombre());
+        usuario.setApellido(usuarioRequest.getApellido());
+        usuario.setEmail(usuarioRequest.getEmail());
+        usuario.setContrasena(usuarioRequest.getContrasena());
+        usuario.setFechaNacimiento(usuarioRequest.getFechaNacimiento());
+        usuario.setFechaRegistro(LocalDate.now());
+        usuario.setRol("Usuario");
+        return usuario;
     }
 
     public String getNombre() {
@@ -47,11 +63,11 @@ public class CrearUsuarioRequest {
         this.contrasena = contrasena;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 }

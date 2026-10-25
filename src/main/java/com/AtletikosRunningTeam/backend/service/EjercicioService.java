@@ -23,7 +23,7 @@ public class EjercicioService {
         return ejercicioRepository.findById(id);
     }
 
-    public void eliminarPorID (Integer id) {
+    public void eliminarPorID(Integer id) {
         ejercicioRepository.findById(id).ifPresent(ejercicioRepository::delete);
     }
 }

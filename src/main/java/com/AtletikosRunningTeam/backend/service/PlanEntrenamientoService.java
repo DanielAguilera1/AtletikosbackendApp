@@ -23,7 +23,7 @@ public class PlanEntrenamientoService {
         return planEntrenamientoRepository.findById(id);
     }
 
-    public void eliminarPorID (Integer id) {
+    public void eliminarPorID(Integer id) {
         planEntrenamientoRepository.findById(id).ifPresent(planEntrenamientoRepository::delete);
     }
 }

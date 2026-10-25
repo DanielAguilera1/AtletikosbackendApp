@@ -31,7 +31,8 @@ public class DetallePlanEjercicio {
     @Column(name = "peso_sugerido", length = 45, nullable = false)
     private String pesoSugerido;
 
-    public DetallePlanEjercicio(){}
+    public DetallePlanEjercicio() {
+    }
 
     public DetallePlanEjercicio(String diaSemana, String series, String repeticiones, String pesoSugerido) {
         this.diaSemana = diaSemana;
@@ -40,18 +41,59 @@ public class DetallePlanEjercicio {
         this.pesoSugerido = pesoSugerido;
     }
 
-    public Integer getId() {return id;}
-    public void setId(Integer id) {this.id = id;}
-    public String getDiaSemana() {return diaSemana;}
-    public void setDiaSemana(String diaSemana) {this.diaSemana = diaSemana;}
-    public String getSeries() {return series;}
-    public void setSeries(String series) {this.series = series;}
-    public String getRepeticiones() {return repeticiones;}
-    public void setRepeticiones(String repeticiones) {this.repeticiones = repeticiones;}
-    public String getPesoSugerido() {return pesoSugerido;}
-    public void setPesoSugerido(String pesoSugerido) {this.pesoSugerido = pesoSugerido;}
-    public PlanEntrenamiento getPlanEntrenamiento() {return planEntrenamiento;}
-    public void setPlanEntrenamiento(PlanEntrenamiento planEntrenamiento) {this.planEntrenamiento = planEntrenamiento;}
-    public Ejercicio getEjercicio() {return ejercicio;}
-    public void setEjercicio(Ejercicio ejercicio) {this.ejercicio = ejercicio;}
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getDiaSemana() {
+        return diaSemana;
+    }
+
+    public void setDiaSemana(String diaSemana) {
+        this.diaSemana = diaSemana;
+    }
+
+    public String getSeries() {
+        return series;
+    }
+
+    public void setSeries(String series) {
+        this.series = series;
+    }
+
+    public String getRepeticiones() {
+        return repeticiones;
+    }
+
+    public void setRepeticiones(String repeticiones) {
+        this.repeticiones = repeticiones;
+    }
+
+    public String getPesoSugerido() {
+        return pesoSugerido;
+    }
+
+    public void setPesoSugerido(String pesoSugerido) {
+        this.pesoSugerido = pesoSugerido;
+    }
+
+    public PlanEntrenamiento getPlanEntrenamiento() {
+        return planEntrenamiento;
+    }
+
+    public void setPlanEntrenamiento(PlanEntrenamiento planEntrenamiento) {
+        this.planEntrenamiento = planEntrenamiento;
+    }
+
+    public Ejercicio getEjercicio() {
+        return ejercicio;
+    }
+
+    public void setEjercicio(Ejercicio ejercicio) {
+        this.ejercicio = ejercicio;
+    }
 }

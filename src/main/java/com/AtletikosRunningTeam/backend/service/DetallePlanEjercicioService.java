@@ -23,7 +23,7 @@ public class DetallePlanEjercicioService {
         return detallePlanEjercicioRepository.findById(id);
     }
 
-    public void eliminarPorID (Integer id) {
+    public void eliminarPorID(Integer id) {
         detallePlanEjercicioRepository.findById(id).ifPresent(detallePlanEjercicioRepository::delete);
     }
 }

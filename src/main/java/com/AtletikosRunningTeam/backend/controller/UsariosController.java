@@ -1,6 +1,6 @@
 package com.AtletikosRunningTeam.backend.controller;
 
-import com.AtletikosRunningTeam.backend.dto.request.CrearUsuarioRequest;
+import com.AtletikosRunningTeam.backend.dto.response.ListarUsuarios;
 import com.AtletikosRunningTeam.backend.model.Usuario;
 import com.AtletikosRunningTeam.backend.service.UsuarioService;
 import org.springframework.http.HttpStatus;
@@ -20,14 +20,8 @@ public class UsariosController {
     }
 
     @GetMapping
-    public List<Usuario> listarUsuarios() {
+    public List<ListarUsuarios> listarUsuarios() {
         return usuarioService.listarTodos();
-    }
-
-    @PostMapping()
-    public ResponseEntity<String> crearUsuario(@RequestBody CrearUsuarioRequest usuario) {
-        usuarioService.crearUsuario(usuario);
-        return new ResponseEntity<>("Usuario creado correctamente", HttpStatus.CREATED);
     }
 
     @GetMapping("/{id}")

@@ -26,7 +26,9 @@ public class Ejercicio {
     @OneToMany(mappedBy = "ejercicio", fetch = FetchType.LAZY)
     private List<DetallePlanEjercicio> detallePlanEjercicios;
 
-    public Ejercicio(){}
+    public Ejercicio() {
+    }
+
     public Ejercicio(String nombre, String descripcion, String grupoMuscular, String urlVideo) {
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -34,17 +36,54 @@ public class Ejercicio {
         this.urlVideo = urlVideo;
     }
 
-    public Integer getId() {return id;}
-    public void setId(Integer idEjercicio) {this.id = id;}
-    public String getNombre() {return nombre;}
-    public void setNombre(String nombre) {this.nombre = nombre;}
-    public String getDescripcion() {return descripcion;}
-    public void setDescripcion(String descripcion) {this.descripcion = descripcion;}
-    public String getGrupoMuscular() {return grupoMuscular;}
-    public void setGrupoMuscular(String grupoMuscular) {this.grupoMuscular = grupoMuscular;}
-    public String getUrlVideo() {return urlVideo;}
-    public void setUrlVideo(String urlVideo) {this.urlVideo = urlVideo;}
-    public void set(String metodoPago) {}
-    public List<DetallePlanEjercicio> getDetallePlanEjercicios() {return detallePlanEjercicios;}
-    public void setDetallePlanEjercicios(List<DetallePlanEjercicio> detallePlanEjercicios) {this.detallePlanEjercicios = detallePlanEjercicios;}
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer idEjercicio) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getGrupoMuscular() {
+        return grupoMuscular;
+    }
+
+    public void setGrupoMuscular(String grupoMuscular) {
+        this.grupoMuscular = grupoMuscular;
+    }
+
+    public String getUrlVideo() {
+        return urlVideo;
+    }
+
+    public void setUrlVideo(String urlVideo) {
+        this.urlVideo = urlVideo;
+    }
+
+    public void set(String metodoPago) {
+    }
+
+    public List<DetallePlanEjercicio> getDetallePlanEjercicios() {
+        return detallePlanEjercicios;
+    }
+
+    public void setDetallePlanEjercicios(List<DetallePlanEjercicio> detallePlanEjercicios) {
+        this.detallePlanEjercicios = detallePlanEjercicios;
+    }
 }

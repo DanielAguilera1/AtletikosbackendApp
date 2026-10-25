@@ -23,7 +23,7 @@ public class PagoService {
         return pagoRepository.findById(id);
     }
 
-    public void eliminarPorID (Integer id) {
+    public void eliminarPorID(Integer id) {
         pagoRepository.findById(id).ifPresent(pagoRepository::delete);
     }
 }
