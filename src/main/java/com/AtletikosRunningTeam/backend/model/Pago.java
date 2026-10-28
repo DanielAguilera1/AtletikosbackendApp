@@ -9,7 +9,7 @@ import java.sql.Date;
 public class Pago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usuario_id", nullable = false)
@@ -27,8 +27,7 @@ public class Pago {
     @Column(name = "estado_pago", nullable = false)
     private String estadoPago;
 
-    public Pago() {
-    }
+    public Pago() {}
 
     public Pago(double monto, Date fechaPago, String metodoPago, String estadoPago) {
         this.monto = monto;
@@ -37,11 +36,11 @@ public class Pago {
         this.estadoPago = estadoPago;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

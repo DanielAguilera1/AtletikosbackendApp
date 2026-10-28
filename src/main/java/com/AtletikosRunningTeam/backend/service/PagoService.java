@@ -19,11 +19,11 @@ public class PagoService {
         return pagoRepository.findAll();
     }
 
-    public Optional<Pago> encontrarPorID(Integer id) {
+    public Optional<Pago> encontrarPorID(long id) {
         return pagoRepository.findById(id);
     }
 
-    public void eliminarPorID(Integer id) {
+    public void eliminarPorID(long id) {
         pagoRepository.findById(id).ifPresent(pagoRepository::delete);
     }
 }

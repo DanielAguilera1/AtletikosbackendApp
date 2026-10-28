@@ -24,12 +24,12 @@ public class PlanEntrenamientoController {
     }
 
     @GetMapping("/{id}")
-    public Optional<PlanEntrenamiento> planEntrenamientoID(@PathVariable int id) {
+    public Optional<PlanEntrenamiento> planEntrenamientoID(@PathVariable long id) {
         return planEntrenamientoService.encontrarPorID(id);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> borrarPlanEntrenamiento(@PathVariable int id) {
+    public ResponseEntity<String> borrarPlanEntrenamiento(@PathVariable long id) {
         planEntrenamientoService.eliminarPorID(id);
         return new ResponseEntity<>("Usuario borrado correctamente", HttpStatus.OK);
     }

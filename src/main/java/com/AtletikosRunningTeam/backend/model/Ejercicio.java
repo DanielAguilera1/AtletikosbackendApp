@@ -26,8 +26,7 @@ public class Ejercicio {
     @OneToMany(mappedBy = "ejercicio", fetch = FetchType.LAZY)
     private List<DetallePlanEjercicio> detallePlanEjercicios;
 
-    public Ejercicio() {
-    }
+    public Ejercicio() {}
 
     public Ejercicio(String nombre, String descripcion, String grupoMuscular, String urlVideo) {
         this.nombre = nombre;

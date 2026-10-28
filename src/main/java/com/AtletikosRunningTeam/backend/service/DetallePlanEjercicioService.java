@@ -19,11 +19,11 @@ public class DetallePlanEjercicioService {
         return detallePlanEjercicioRepository.findAll();
     }
 
-    public Optional<DetallePlanEjercicio> encontrarPorID(Integer id) {
+    public Optional<DetallePlanEjercicio> encontrarPorID(long id) {
         return detallePlanEjercicioRepository.findById(id);
     }
 
-    public void eliminarPorID(Integer id) {
+    public void eliminarPorID(long id) {
         detallePlanEjercicioRepository.findById(id).ifPresent(detallePlanEjercicioRepository::delete);
     }
 }

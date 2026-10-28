@@ -25,12 +25,12 @@ public class UsariosController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Usuario> usuarioID(@PathVariable int id) {
+    public Optional<Usuario> usuarioID(@PathVariable long id) {
         return usuarioService.encontrarPorID(id);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteStudent(@PathVariable int id) {
+    public ResponseEntity<String> deleteStudent(@PathVariable long id) {
         usuarioService.eliminarPorID(id);
         return new ResponseEntity<>("Usuario borrado correctamente", HttpStatus.OK);
     }

@@ -24,12 +24,12 @@ public class PagoController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Pago> pagoID(@PathVariable int id) {
+    public Optional<Pago> pagoID(@PathVariable long id) {
         return pagoService.encontrarPorID(id);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> borrarPagoID(@PathVariable int id) {
+    public ResponseEntity<String> borrarPagoID(@PathVariable long id) {
         pagoService.eliminarPorID(id);
         return new ResponseEntity<>("Usuario borrado correctamente", HttpStatus.OK);
     }

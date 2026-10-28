@@ -58,11 +58,11 @@ public class UsuarioService {
                 .toList();
     }
 
-    public Optional<Usuario> encontrarPorID(Integer id) {
+    public Optional<Usuario> encontrarPorID(long id) {
         return usuarioRepository.findById(id);
     }
 
-    public void eliminarPorID(Integer id) {
+    public void eliminarPorID(long id) {
         usuarioRepository.findById(id).ifPresent(usuarioRepository::delete);
     }
 }

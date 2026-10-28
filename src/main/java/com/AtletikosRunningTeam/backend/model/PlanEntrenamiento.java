@@ -12,7 +12,7 @@ public class PlanEntrenamiento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Integer id;
+    private Long id;
 
     @Column(name = "nombre_plan", length = 45, nullable = false)
     private String nombrePlan;
@@ -42,8 +42,7 @@ public class PlanEntrenamiento {
     @OneToMany(mappedBy = "planEntrenamiento", fetch = FetchType.LAZY)
     private List<DetallePlanEjercicio> detallePlanEjercicios;
 
-    public PlanEntrenamiento() {
-    }
+    public PlanEntrenamiento() {}
 
     public PlanEntrenamiento(String nombrePlan, String descripcion, LocalDate fechaInicio, LocalDate fechaFin, Usuario entrenador, Usuario cliente, Estado estado) {
         this.nombrePlan = nombrePlan;
@@ -55,11 +54,11 @@ public class PlanEntrenamiento {
         this.estado = estado;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
