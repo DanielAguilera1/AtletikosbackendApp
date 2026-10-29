@@ -1,7 +1,7 @@
 package com.AtletikosRunningTeam.backend.controller;
 
-import com.AtletikosRunningTeam.backend.dto.request.UsuarioRequest;
 import com.AtletikosRunningTeam.backend.dto.request.LoginUsuario;
+import com.AtletikosRunningTeam.backend.dto.request.UsuarioRequest;
 import com.AtletikosRunningTeam.backend.service.UsuarioService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,9 +1,7 @@
 package com.AtletikosRunningTeam.backend.model;
 
 import jakarta.persistence.*;
-import org.springframework.cglib.core.Local;
 
-import java.sql.Date;
 import java.time.LocalDate;
 
 @Entity

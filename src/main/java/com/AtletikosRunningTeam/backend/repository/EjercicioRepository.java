@@ -1,7 +1,6 @@
 package com.AtletikosRunningTeam.backend.repository;
 
 import com.AtletikosRunningTeam.backend.model.Ejercicio;
-import com.AtletikosRunningTeam.backend.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
