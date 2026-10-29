@@ -1,6 +1,7 @@
 package com.AtletikosRunningTeam.backend.service;
 
-import com.AtletikosRunningTeam.backend.dto.request.CrearUsuarioRequest;
+import com.AtletikosRunningTeam.backend.dto.request.ActualizarUsuario;
+import com.AtletikosRunningTeam.backend.dto.request.UsuarioRequest;
 import com.AtletikosRunningTeam.backend.dto.request.LoginUsuario;
 import com.AtletikosRunningTeam.backend.dto.response.ListarUsuarios;
 import com.AtletikosRunningTeam.backend.model.Usuario;
@@ -21,11 +22,21 @@ public class UsuarioService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public boolean registrarUsuario(CrearUsuarioRequest crearUsuario) {
+    public void actualizarUsuario(ActualizarUsuario actualizarUsuario) {
+        Usuario usuario = usuarioRepository.findByEmail(actualizarUsuario.getEmail())
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado con el email: " + actualizarUsuario.getEmail()));
+
+        usuario.setRol(actualizarUsuario.getRol());
+        usuario.setNombre(actualizarUsuario.getNombre());
+        usuario.setApellido(actualizarUsuario.getApellido());
+        usuario.setFechaNacimiento(actualizarUsuario.getFechaNacimiento());
+
+        usuarioRepository.save(usuario);
+    }
+
+    public boolean registrarUsuario(UsuarioRequest crearUsuario) {
         // verificar que el email no este ya tomado
-        if (usuarioRepository.findByEmail(crearUsuario.getEmail()).isPresent()) {
-            return false;
-        }
+        if (usuarioRepository.findByEmail(crearUsuario.getEmail()).isPresent()) return false;
 
         // Encriptar la contraseña antes de guardarla
         crearUsuario.setContrasena(passwordEncoder.encode(crearUsuario.getContrasena()));

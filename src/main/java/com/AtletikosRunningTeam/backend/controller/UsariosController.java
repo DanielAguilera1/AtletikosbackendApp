@@ -1,5 +1,8 @@
 package com.AtletikosRunningTeam.backend.controller;
 
+import com.AtletikosRunningTeam.backend.dto.request.ActualizarUsuario;
+import com.AtletikosRunningTeam.backend.dto.request.LoginUsuario;
+import com.AtletikosRunningTeam.backend.dto.request.UsuarioRequest;
 import com.AtletikosRunningTeam.backend.dto.response.ListarUsuarios;
 import com.AtletikosRunningTeam.backend.model.Usuario;
 import com.AtletikosRunningTeam.backend.service.UsuarioService;
@@ -30,8 +33,18 @@ public class UsariosController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteStudent(@PathVariable long id) {
+    public ResponseEntity<String> borrarUsuario(@PathVariable long id) {
         usuarioService.eliminarPorID(id);
         return new ResponseEntity<>("Usuario borrado correctamente", HttpStatus.OK);
+    }
+
+    @PutMapping()
+    public ResponseEntity<String> actualizarUsuario(@RequestBody ActualizarUsuario usuario) {
+        try {
+            usuarioService.actualizarUsuario(usuario);
+            return ResponseEntity.ok("Usuario actualizado con éxito");
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
     }
 }

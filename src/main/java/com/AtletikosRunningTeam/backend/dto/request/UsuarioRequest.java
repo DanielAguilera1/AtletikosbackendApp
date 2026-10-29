@@ -4,14 +4,15 @@ import com.AtletikosRunningTeam.backend.model.Usuario;
 
 import java.time.LocalDate;
 
-public class CrearUsuarioRequest {
+public class UsuarioRequest {
     private String nombre;
     private String apellido;
     private String email;
     private String contrasena;
     private LocalDate fechaNacimiento;
+    private String rol;
 
-    public CrearUsuarioRequest(String nombre, String apellido, String email, String contrasena, LocalDate fechaNacimiento) {
+    public UsuarioRequest(String nombre, String apellido, String email, String contrasena, LocalDate fechaNacimiento) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
@@ -19,7 +20,7 @@ public class CrearUsuarioRequest {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public Usuario convertirUsuario(CrearUsuarioRequest usuarioRequest) {
+    public Usuario convertirUsuario(UsuarioRequest usuarioRequest) {
         Usuario usuario = new Usuario();
         usuario.setNombre(usuarioRequest.getNombre());
         usuario.setApellido(usuarioRequest.getApellido());
@@ -70,4 +71,8 @@ public class CrearUsuarioRequest {
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
+
+    public String getRol() {return rol;}
+
+    public void setRol(String rol) {this.rol = rol;}
 }

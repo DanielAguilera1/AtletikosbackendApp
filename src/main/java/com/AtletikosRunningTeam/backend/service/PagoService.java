@@ -4,6 +4,7 @@ import com.AtletikosRunningTeam.backend.model.Pago;
 import com.AtletikosRunningTeam.backend.repository.PagoRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,6 +14,11 @@ public class PagoService {
 
     public PagoService(PagoRepository pagoRepository) {
         this.pagoRepository = pagoRepository;
+    }
+
+    public void crearPago(Pago pago) {
+        pago.setFechaPago(LocalDate.now());
+        pagoRepository.save(pago);
     }
 
     public List<Pago> listarTodos() {

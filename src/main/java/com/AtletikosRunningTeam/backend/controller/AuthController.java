@@ -1,6 +1,6 @@
 package com.AtletikosRunningTeam.backend.controller;
 
-import com.AtletikosRunningTeam.backend.dto.request.CrearUsuarioRequest;
+import com.AtletikosRunningTeam.backend.dto.request.UsuarioRequest;
 import com.AtletikosRunningTeam.backend.dto.request.LoginUsuario;
 import com.AtletikosRunningTeam.backend.service.UsuarioService;
 import org.springframework.http.HttpStatus;
@@ -18,7 +18,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<String> register(@RequestBody CrearUsuarioRequest usuario) {
+    public ResponseEntity<String> register(@RequestBody UsuarioRequest usuario) {
         boolean resultado = usuarioService.registrarUsuario(usuario);
         if (!resultado) {
             return ResponseEntity.badRequest().body("Ya existe un Usuario con ese Email");

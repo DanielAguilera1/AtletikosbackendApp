@@ -1,8 +1,10 @@
 package com.AtletikosRunningTeam.backend.model;
 
 import jakarta.persistence.*;
+import org.springframework.cglib.core.Local;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "pagos")
@@ -19,7 +21,7 @@ public class Pago {
     private double monto;
 
     @Column(name = "fecha_pago", nullable = false)
-    private Date fechaPago;
+    private LocalDate fechaPago;
 
     @Column(name = "metodo_pago", nullable = false)
     private String metodoPago;
@@ -29,9 +31,15 @@ public class Pago {
 
     public Pago() {}
 
-    public Pago(double monto, Date fechaPago, String metodoPago, String estadoPago) {
+    public Pago(double monto, LocalDate fechaPago, String metodoPago, String estadoPago) {
         this.monto = monto;
         this.fechaPago = fechaPago;
+        this.metodoPago = metodoPago;
+        this.estadoPago = estadoPago;
+    }
+
+    public Pago(double monto, String metodoPago, String estadoPago) {
+        this.monto = monto;
         this.metodoPago = metodoPago;
         this.estadoPago = estadoPago;
     }
@@ -60,11 +68,11 @@ public class Pago {
         this.monto = monto;
     }
 
-    public Date getFechaPago() {
+    public LocalDate getFechaPago() {
         return fechaPago;
     }
 
-    public void setFechaPago(Date fechaPago) {
+    public void setFechaPago(LocalDate fechaPago) {
         this.fechaPago = fechaPago;
     }
 

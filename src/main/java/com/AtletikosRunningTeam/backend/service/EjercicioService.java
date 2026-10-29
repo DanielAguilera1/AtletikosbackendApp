@@ -15,6 +15,17 @@ public class EjercicioService {
         this.ejercicioRepository = ejercicioRepository;
     }
 
+    public void crearEjercicio(Ejercicio ejercicio) {
+        ejercicioRepository.save(ejercicio);
+    }
+
+    public void ActualizarEjercicio(Ejercicio ejercicio){
+        ejercicioRepository.findById(ejercicio.getId())
+                .orElseThrow(() -> new RuntimeException("ID: " + ejercicio.getId() + " del ejercicio no encontrado"));
+
+        ejercicioRepository.save(ejercicio);
+    }
+
     public List<Ejercicio> listarTodos() {
         return ejercicioRepository.findAll();
     }

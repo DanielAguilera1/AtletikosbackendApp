@@ -18,9 +18,25 @@ public class EjercicioController {
         this.ejercicioService = ejercicioService;
     }
 
-    @GetMapping
+    @GetMapping()
     public List<Ejercicio> listarEjercicios() {
         return ejercicioService.listarTodos();
+    }
+
+    @PostMapping()
+    public ResponseEntity<String> CrearEjercicio (Ejercicio ejercicio) {
+        ejercicioService.crearEjercicio(ejercicio);
+        return ResponseEntity.ok("Ejercicio creado Correctamente");
+    }
+
+    @PutMapping()
+    public ResponseEntity<String> ActualizarEjercicio (Ejercicio ejercicio) {
+        try {
+            ejercicioService.ActualizarEjercicio(ejercicio);
+            return ResponseEntity.ok("Ejercicio Actualizado Correctamente");
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
     }
 
     @GetMapping("/{id}")

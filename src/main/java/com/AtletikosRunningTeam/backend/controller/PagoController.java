@@ -28,6 +28,12 @@ public class PagoController {
         return pagoService.encontrarPorID(id);
     }
 
+    @PostMapping()
+    public ResponseEntity<String> crearPago(Pago pago) {
+        pagoService.crearPago(pago);
+        return ResponseEntity.ok("Pago Realizado");
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<String> borrarPagoID(@PathVariable long id) {
         pagoService.eliminarPorID(id);

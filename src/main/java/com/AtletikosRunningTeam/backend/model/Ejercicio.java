@@ -39,7 +39,7 @@ public class Ejercicio {
         return id;
     }
 
-    public void setId(Integer idEjercicio) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
