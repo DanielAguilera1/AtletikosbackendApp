@@ -1,5 +1,7 @@
 package com.AtletikosRunningTeam.backend.controller;
 
+import com.AtletikosRunningTeam.backend.dto.request.PagoDTO;
+import com.AtletikosRunningTeam.backend.dto.response.ListarPagos;
 import com.AtletikosRunningTeam.backend.model.Pago;
 import com.AtletikosRunningTeam.backend.service.PagoService;
 import org.springframework.http.HttpStatus;
@@ -19,7 +21,7 @@ public class PagoController {
     }
 
     @GetMapping
-    public List<Pago> listarPagos() {
+    public List<ListarPagos> listarPagos() {
         return pagoService.listarTodos();
     }
 
@@ -29,7 +31,7 @@ public class PagoController {
     }
 
     @PostMapping()
-    public ResponseEntity<String> crearPago(Pago pago) {
+    public ResponseEntity<String> crearPago(@RequestBody PagoDTO pago) {
         pagoService.crearPago(pago);
         return ResponseEntity.ok("Pago Realizado");
     }
@@ -37,6 +39,6 @@ public class PagoController {
     @DeleteMapping("/{id}")
     public ResponseEntity<String> borrarPagoID(@PathVariable long id) {
         pagoService.eliminarPorID(id);
-        return new ResponseEntity<>("Usuario borrado correctamente", HttpStatus.OK);
+        return new ResponseEntity<>("Pago borrado correctamente", HttpStatus.OK);
     }
 }

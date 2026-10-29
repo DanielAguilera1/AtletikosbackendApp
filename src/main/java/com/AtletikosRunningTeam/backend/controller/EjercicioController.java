@@ -24,13 +24,13 @@ public class EjercicioController {
     }
 
     @PostMapping()
-    public ResponseEntity<String> CrearEjercicio (Ejercicio ejercicio) {
+    public ResponseEntity<String> CrearEjercicio (@RequestBody Ejercicio ejercicio) {
         ejercicioService.crearEjercicio(ejercicio);
         return ResponseEntity.ok("Ejercicio creado Correctamente");
     }
 
     @PutMapping()
-    public ResponseEntity<String> ActualizarEjercicio (Ejercicio ejercicio) {
+    public ResponseEntity<String> ActualizarEjercicio (@RequestBody Ejercicio ejercicio) {
         try {
             ejercicioService.ActualizarEjercicio(ejercicio);
             return ResponseEntity.ok("Ejercicio Actualizado Correctamente");
@@ -47,6 +47,6 @@ public class EjercicioController {
     @DeleteMapping("/{id}")
     public ResponseEntity<String> borrarEjercicioID(@PathVariable int id) {
         ejercicioService.eliminarPorID(id);
-        return new ResponseEntity<>("Usuario borrado correctamente", HttpStatus.OK);
+        return new ResponseEntity<>("Ejercicio borrado correctamente", HttpStatus.OK);
     }
 }
